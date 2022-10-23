@@ -1,19 +1,23 @@
 const globalData = {
-  UserBaseInfo: "",
+  UserBaseInfo: {
+    UserId: "111",
+  },
 };
 
-export default class utils {
-  setGD(key, value) {
+const utils = {
+  setGD: function (key, value) {
     if (key === "" || key == null) {
       return;
     }
     globalData[key] = value;
-  }
+  },
 
-  getGD(key) {
+  getGD: function (key) {
     if (key === "" || key == null) {
       return;
     }
     return globalData[key];
-  }
-}
+  },
+};
+
+export default utils;
