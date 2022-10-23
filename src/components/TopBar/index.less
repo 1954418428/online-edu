@@ -1,0 +1,78 @@
+.top-bar {
+  box-sizing: border-box;
+  height: 3.125rem;
+  background-color: rgb(32, 35, 42);
+  color: white;
+  .menu-list {
+    flex-basis: 1160px;
+    flex-grow: 0;
+  }
+  @media screen and (min-width: 768px) {
+    .menu-list {
+      padding: 0 60px;
+    }
+  }
+
+  .website-title {
+    font-size: 1.5rem !important;
+    font-weight: bold;
+  }
+  .mid-box {
+    flex-grow: 1;
+  }
+  .menu-item {
+    box-sizing: border-box;
+    font-size: 1.125rem;
+    line-height: 3.125rem;
+    min-width: 4.25rem;
+    padding: 0 8px;
+
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .mid-box .menu-item:hover,
+  .active {
+    background: rgba(255, 255, 255, 0.1);
+    color: #de3a31 !important;
+  }
+
+  .user-info {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 1.25rem;
+    .user-img {
+      height: 2.8125rem;
+      width: 2.8125rem;
+      border-radius: 1.4063rem;
+    }
+    .user-nickname {
+      margin-left: 0.75rem;
+    }
+    .user-menu-item {
+      display: none;
+    }
+    .user-menu-item > div {
+      height: 1.875rem;
+      line-height: 1.875rem;
+      padding-left: 8px;
+      font-size: 0.875rem;
+      cursor: pointer;
+    }
+    .user-menu-item > div:hover {
+      background-color: rgb(54, 55, 56);
+      color: rgb(65, 125, 205);
+    }
+  }
+  .user-info:hover .user-menu-item,
+  .user-menu-item:hover {
+    display: block !important;
+    position: absolute;
+    width: 100%;
+    top: 3.125rem;
+    left: 0;
+    background-color: rgb(39, 39, 40);
+  }
+}
