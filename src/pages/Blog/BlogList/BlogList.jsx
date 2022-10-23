@@ -91,9 +91,10 @@ function BlogList() {
               {
                 orderFilterParam && orderFilterParam.map((item,index)=>(
                   <div className={pageFilterData.activeOrderId === item.Id ? "filter-item active" : "filter-item"} key={item.Id}
-                    onClick = { filterItemClicked.bind(this,'activeOrderId',item)}
                   >
-                    {item.Name}
+                    <span onClick = { filterItemClicked.bind(this,'activeOrderId',item)}>
+                      {item.Name}
+                    </span>
                   </div>
                 ))
               }
@@ -104,7 +105,10 @@ function BlogList() {
                     <div className={pageFilterData.activeCategoryId === item.Id ? "filter-item active" : "filter-item"} key={item.Id}
                       onClick = { filterItemClicked.bind(this,'activeCategoryId',item)}
                     >
+                      <span onClick = { filterItemClicked.bind(this,'activeCategoryId',item)}>
                       {item.CategoryName}
+                      </span>
+                      
                     </div>
                   ))
               }
