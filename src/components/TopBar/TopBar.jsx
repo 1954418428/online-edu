@@ -1,9 +1,12 @@
 import React,{useState} from "react";
 import './index.less'
+import { useNavigate, useLocation, useParams } from 'react-router-dom';
 
 import utils from '../../util/utils'
 
 function TopBar(props){
+  const navigate = useNavigate ();
+  
   const [menuList,setMenuList] = useState([
     { title: "主页", path: "/" },
     { title: "课程", path: "/LessonList"},
@@ -14,6 +17,11 @@ function TopBar(props){
 
   const UserBaseInfo = utils.getGD("UserBaseInfo");
   const [activeIndex,setActiveIndex] = useState(props.activeIndex);
+
+  const menuClicked = (item)=>{
+    console.log(item);
+    navigate(item.path,{ replace: false})
+  }
 
   return (
     <React.Fragment>
@@ -26,7 +34,7 @@ function TopBar(props){
           <ul className="mid-box flex">
             { menuList && menuList.map((item,index) => (
               <li className={activeIndex === index ? 'menu-item active' : 'menu-item'} 
-              key={index}>
+              key={index} onClick={menuClicked.bind(this,item)}>
                 {item.title}
               </li>
             ))}
