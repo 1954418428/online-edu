@@ -46,3 +46,6 @@ li {
 .justify-content-center {
   justify-content: center;
 }
+.root-cont {
+  min-height: calc(100vh - 3.125rem - 7.5rem);
+}
