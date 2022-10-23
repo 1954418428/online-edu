@@ -9,7 +9,7 @@ function FloorBar(props){
   return (
     <React.Fragment>
       <div className="floor-bar flex justify-content-center">
-        <div class="floor-content">
+        <div className="floor-content">
           <h3>致力打造专注计算机知识教育的免费平台</h3>
           <h3>怀化学院</h3>
         </div>
