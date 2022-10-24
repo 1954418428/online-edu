@@ -5,6 +5,7 @@ import './index.less'
 
 import TopBar from '../../../components/TopBar/TopBar'
 import FloorBar from '../../../components/FloorBar/FloorBar'
+import BlogCard from '../../../components/BlogCard/BlogCard'
 
 import utils from '../../../util/utils'
 import http from '../../../util/http'
@@ -79,7 +80,10 @@ function BlogList() {
     console.log("pageFilterData",pageFilterData)
   }, [pageFilterData]); 
 
-  
+  let arr =[];
+  for(let i = 0 ; i <20 ;i++){
+    arr.push(i)
+  }
   return (
     <Fragment >
       <TopBar activeIndex={2} ></TopBar>
@@ -114,6 +118,21 @@ function BlogList() {
               }
             </div>
           </div>
+          <div className="flex">
+            <ul className="blog-list-cont">
+              {
+                arr.map((item,index)=>(
+                  <li className="blog-item" key={index}>
+                    <BlogCard></BlogCard>
+                  </li>
+                ))
+              }
+            </ul>
+            <div className="right-box">
+
+            </div>
+          </div>
+          
         </div>
       </div>
 
